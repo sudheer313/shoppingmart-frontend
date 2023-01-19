@@ -22,7 +22,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route index path="/" element={<Home />} />
+          <Route
+            index
+            path="/"
+            element={loggedInUser ? <Home /> : <Navigate to="/login" />}
+          />
           <Route path="register" element={<Register />} />
           <Route
             path="login"
